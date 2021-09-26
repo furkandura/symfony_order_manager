@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "6388eaf7-09d2-4f9c-b9a0-de91072b4a82",
+		"name": "Path Case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Giriş",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"test\",\r\n    \"password\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "## Müşteri Girişi"
+					},
+					"response": []
+				},
+				{
+					"name": "Kayıt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"test\",\r\n    \"password\" : \"test\",\r\n    \"full_name\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						},
+						"description": "## Müşteri Kayıt"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Sipariş Oluşturma",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzI2NjI5NzIsImV4cCI6MTYzMjY2NjU3Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdCJ9.AfUKlcRvblG5LV_knwqHAE5XENX5xXpHG_m_BAtQ3y2g0JnD9chtGxaSjtnWTcxSWZENfsf0bCjo-YRGa5NJll4G7UUXrSa0uqCgpU2fvPdFmrHS8HzJJyWM8sjFOu0WvVi84wJkVrGD5gK794G2R5rECIRS1qbHGyOi94im3W-C2nEbacD7TKAKNKLaAdqTGJ6qPmeaRtmg6dXs2fXzUKDNwy_Ld7O_fu5X09sGu6EBRl4HzWKStSaRUMT-C_D331wCu-LCVf5nB6ZQlpnNcV0g-N4aIg4ryXo7iS1TdEnx3VYmqBzUPIyllkX2t-WfEfVvZ8eLZ89OabKGykaC1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : 4,\r\n    \"quantity\" : 15,\r\n    \"address\" : \"Beylikdüzü\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/order/new",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"new"
+							]
+						},
+						"description": "## Sipariş Oluşturma"
+					},
+					"response": []
+				},
+				{
+					"name": "Sipariş Güncelleme",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzI2NjI5NzIsImV4cCI6MTYzMjY2NjU3Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdCJ9.AfUKlcRvblG5LV_knwqHAE5XENX5xXpHG_m_BAtQ3y2g0JnD9chtGxaSjtnWTcxSWZENfsf0bCjo-YRGa5NJll4G7UUXrSa0uqCgpU2fvPdFmrHS8HzJJyWM8sjFOu0WvVi84wJkVrGD5gK794G2R5rECIRS1qbHGyOi94im3W-C2nEbacD7TKAKNKLaAdqTGJ6qPmeaRtmg6dXs2fXzUKDNwy_Ld7O_fu5X09sGu6EBRl4HzWKStSaRUMT-C_D331wCu-LCVf5nB6ZQlpnNcV0g-N4aIg4ryXo7iS1TdEnx3VYmqBzUPIyllkX2t-WfEfVvZ8eLZ89OabKGykaC1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\" : 4,\r\n    \"quantity\" : 15,\r\n    \"address\" : \"Pendik\",\r\n    \"shipping_date\" : \"2021-09-26 11:47:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/order/update/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"update",
+								"2"
+							]
+						},
+						"description": "## Sipariş Güncelleme"
+					},
+					"response": []
+				},
+				{
+					"name": "Sipariş Detayı",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzI2NjI5NzIsImV4cCI6MTYzMjY2NjU3Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdCJ9.AfUKlcRvblG5LV_knwqHAE5XENX5xXpHG_m_BAtQ3y2g0JnD9chtGxaSjtnWTcxSWZENfsf0bCjo-YRGa5NJll4G7UUXrSa0uqCgpU2fvPdFmrHS8HzJJyWM8sjFOu0WvVi84wJkVrGD5gK794G2R5rECIRS1qbHGyOi94im3W-C2nEbacD7TKAKNKLaAdqTGJ6qPmeaRtmg6dXs2fXzUKDNwy_Ld7O_fu5X09sGu6EBRl4HzWKStSaRUMT-C_D331wCu-LCVf5nB6ZQlpnNcV0g-N4aIg4ryXo7iS1TdEnx3VYmqBzUPIyllkX2t-WfEfVvZ8eLZ89OabKGykaC1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/order/detail/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"detail",
+								"2"
+							]
+						},
+						"description": "## Sipariş Detayı"
+					},
+					"response": []
+				},
+				{
+					"name": "Tüm Siparişleri Listeleme",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MzI2NjI5NzIsImV4cCI6MTYzMjY2NjU3Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdCJ9.AfUKlcRvblG5LV_knwqHAE5XENX5xXpHG_m_BAtQ3y2g0JnD9chtGxaSjtnWTcxSWZENfsf0bCjo-YRGa5NJll4G7UUXrSa0uqCgpU2fvPdFmrHS8HzJJyWM8sjFOu0WvVi84wJkVrGD5gK794G2R5rECIRS1qbHGyOi94im3W-C2nEbacD7TKAKNKLaAdqTGJ6qPmeaRtmg6dXs2fXzUKDNwy_Ld7O_fu5X09sGu6EBRl4HzWKStSaRUMT-C_D331wCu-LCVf5nB6ZQlpnNcV0g-N4aIg4ryXo7iS1TdEnx3VYmqBzUPIyllkX2t-WfEfVvZ8eLZ89OabKGykaC1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/order/all",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"all"
+							]
+						},
+						"description": "## Tüm Siparişleri Listele"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
