@@ -38,7 +38,7 @@ Veritabanı bağlantısını ve projeyi ayağa kaldırma işlemini sağladıktan
 <code>php ./bin/phpunit tests/Controller/OrderControllerTest.php</code>
 
 
-## Önemli
+## Api Dökümanı
 
 Postman collection dosyası <code>docs/Postman_collection.json</code> dosya dizininde bulunmaktadır.
 Api döküman bilgilerini kolayca import edebilirsiniz.
